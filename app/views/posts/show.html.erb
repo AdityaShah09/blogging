@@ -1,0 +1,14 @@
+<hr>
+<center><div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title text-primary"><strong><%= @post.title %></strong></h5>
+    <p class="card-text"> <strong><%= @post.description %></strong></p>
+    <div class="text-sm-left"> 
+      <%= render  @post.comments %>
+      <%= render 'comments/form' %>
+    </div>
+  </div>
+</div>
+</center>
+<%= link_to 'Edit', edit_user_post_path(@post) %>
+<%= link_to 'Back', @posts_path %>

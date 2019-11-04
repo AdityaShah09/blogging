@@ -1,0 +1,10 @@
+  <p class="navbar-text float-right">
+    <% if user_signed_in? %>
+    
+      Logged in as <strong><%= current_user.email %></strong>.
+      <%= link_to 'Logout', destroy_user_session_path, :method => :delete,  class: 'btn btn-primary pull-right text-white' %>
+    <% else %>
+      <%= link_to '<button class="btn btn-info" type="button">Login</button>'.html_safe, new_user_session_path, :class => 'navbar-link'  %>
+    <% end %>
+  </p><br><br>
+

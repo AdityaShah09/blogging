@@ -1,0 +1,69 @@
+inherit_from: .rubocop_todo.yml
+
+AllCops:
+  Exclude:
+    - "db/**/*"
+    - "tmp/**/*"
+    - "vendor/**/*"
+    - "bin/**/*"
+    - "log/**/*"
+    - "script/**/*"
+    - "utilities/**/*"
+
+Bundler/OrderedGems:
+  Exclude:
+    - 'Gemfile'
+    - 'utilities/Gemfile'
+
+Layout/CaseIndentation:
+  EnforcedStyle: end
+
+Layout/SpaceInLambdaLiteral:
+  EnforcedStyle: require_space
+
+Metrics/AbcSize:
+  Max: 279
+
+Metrics/BlockLength:
+  Max: 2643
+
+Metrics/BlockNesting:
+  Max: 5
+
+Metrics/ClassLength:
+  Max: 833
+
+Metrics/CyclomaticComplexity:
+  Max: 57
+
+Metrics/LineLength:
+  Max: 300
+  Exclude:
+    - 'db/seeds.rb'
+
+Metrics/MethodLength:
+  Max: 600
+
+Metrics/ModuleLength:
+  Max: 700
+
+Metrics/ParameterLists:
+  Max: 8
+
+Metrics/PerceivedComplexity:
+  Max: 68
+
+Style/EmptyMethod:
+  EnforcedStyle: expanded
+
+Style/MultilineBlockChain:
+  Enabled: false
+
+Style/SymbolArray:
+  EnforcedStyle: brackets
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false

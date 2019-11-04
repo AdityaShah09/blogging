@@ -1,0 +1,11 @@
+<%= form_with(model: [current_user,@post, @post.comments.build], local: true, :remote=>true) do |form| %>
+
+  <div class="field">
+    <%= form.label :Comment    %>
+    <%= form.text_field :description, id: :comment_description %>
+  </div> 
+  
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
