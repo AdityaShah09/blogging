@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class CommentsController < ApplicationController
+  before_action :set_comment, only: [:upvote, :downvote]
   # GET /comments
   # GET /comments.json
   def index
@@ -62,11 +63,27 @@ class CommentsController < ApplicationController
     end
   end
 
+  def upvote
+    @post = Post.find(params[:post_id])
+    @comment.upvote_by current_user
+    respond_to do |format|
+      format.html { redirect_to user_post_path(current_user, @post) }
+    end
+  end
+
+  def downvote
+    @post = Post.find(params[:post_id])
+    @comment.downvote_by current_user
+    respond_to do |format|
+      format.html { redirect_to user_post_path(current_user, @post) }
+    end
+  end
+
   private
 
   # Use callbacks to share common setup or constraints between actions.
   def set_comment
-    @comment = Comment.find(params[:id])
+    @comment = Comment.find(params[:comment_id])
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.

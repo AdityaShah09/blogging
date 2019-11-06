@@ -1,9 +1,12 @@
-
-<hr>   
   <h6><strong>Commentor</strong> : <%= comment.user.email %>  </h6>
   <h6><strong>Comment</strong> : <%= comment.description %></h6><br>
-  <p id="comment_btn">	<%= link_to 'Like', '#' %> | <%= link_to 'Dislike', '#' %> | <%= link_to 'Edit', '#' %> </p>
-  
+  <p id='comment_btn' >
+    <%= link_to  user_post_comment_like_path(current_user, @post, comment), method: :put do %> Like  
+      <%= comment.get_upvotes.size %> <% end %> | 
+    <%= link_to user_post_comment_dislike_path(current_user, @post, comment), method: :put do %> Dislike
+      <%= comment.get_downvotes.size %> <% end %> | 
+    <%= link_to 'Edit', '#' %> 
+  </p>  
  
 
 

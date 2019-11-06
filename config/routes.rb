@@ -7,7 +7,10 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :posts do
-      resources :comments, shallow: true
+      resources :comments do
+        put 'like', to: 'comments#upvote'
+        put 'dislike', to: 'comments#downvote'
+      end
     end
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

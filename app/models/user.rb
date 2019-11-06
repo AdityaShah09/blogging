@@ -8,4 +8,5 @@ class User < ApplicationRecord
          :validatable
   has_many :posts
   has_many :comments
+  acts_as_voter
 end
