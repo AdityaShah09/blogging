@@ -1,14 +1,27 @@
-<hr>
 <center><div class="card" style="width: 18rem;">
   <div class="card-body">
-    <h5 class="card-title text-primary"><strong><%= @post.title %></strong></h5>
-    <p class="card-text"> <strong><%= @post.description %></strong></p>
-    <div class="text-sm-left"> 
+    <h5 class="card-title">
+      <strong>
+        <%= @post.title %>
+      </strong>
+    </h5>
+    <p class="card-text">
+      <strong>
+        <%= @post.description %>
+      </strong>
+    </p>	
+    <div class="text-sm-left">
+      <p id='comment_btn' class="text-primary" >
+        <%= link_to 'Like', user_post_like_path(current_user, @post), method: :put, :class => "text-primary", remote: true %> 
+        <%= @post.get_upvotes.size %> |
+        <%= link_to 'Dislike', user_post_dislike_path(current_user, @post), method: :put,:class => "text-primary", remote: true %>
+        <%=@post.get_downvotes.size %> <hr>
+      </p> 
       <%= render  @post.comments %>
-      <%= render 'comments/form' %>
+      <center>
+        <%= render 'comments/form', locals: @comment = @post.comments.build %>
+      </center>
     </div>
   </div>
 </div>
 </center>
-<%= link_to 'Edit', edit_user_post_path(@post) %>
-<%= link_to 'Back', @posts_path %>

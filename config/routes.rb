@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :posts do
+      put 'like', to: 'posts#upvote'
+      put 'dislike', to: 'posts#downvote'
       resources :comments do
         put 'like', to: 'comments#upvote'
         put 'dislike', to: 'comments#downvote'
