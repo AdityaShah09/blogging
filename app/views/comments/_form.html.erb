@@ -1,11 +1,12 @@
 <%= form_for([current_user, @post, @comment]) do |form| %>
-  <div class="field float-left">
-    <%= form.text_field :description, id: :comment_description, class: 'form-control adjust_width'  %>
+  <div class="field">
+    <%= form.text_field :description, id: :comment_description %>
   </div> 
-  <br>
+  
   <div class="actions float-left">
     <%= form.submit %>
   </div>
+
 <% end %>
 
 
