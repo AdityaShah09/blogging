@@ -15,3 +15,9 @@
 //= require_tree
 //= rsequire rails-ujs
 //= require jquery3
+
+<script>
+  $('#datepicker').datepicker({
+      uiLibrary: 'bootstrap4'
+  });
+</script>

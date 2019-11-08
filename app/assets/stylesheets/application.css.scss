@@ -17,3 +17,32 @@
 table, td{
 	text-align: center;
 }
+
+.dropdown > .dropdown-menu {
+  top: 200%;
+  transition: 0.3s all ease-in-out;
+}
+
+.dropdown:hover > .dropdown-menu {
+  display: block;
+  top: 100%;
+}
+
+.dropdown > .dropdown-toggle:active {
+  /*Without this, clicking will make it sticky*/
+  pointer-events: none;
+}
+
+.logo:hover{
+	background-color:transparent;
+}
+
+.form-content
+{
+    padding: 5%;
+    border: 1px solid #ced4da;
+    margin-bottom: 2%;
+}
+.form-control{
+    border-radius:1.5rem;
+}

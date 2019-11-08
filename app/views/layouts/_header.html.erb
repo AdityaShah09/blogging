@@ -1,11 +1,20 @@
 <br>
 <div class="float-left">
-  <%= image_tag("blog.png", :alt => "rss feed", height: '45', width: '90') %>
+  <%= link_to root_path, :class => "logo"  do %>
+    <%= image_tag("blog.png", :alt => "rss feed", height: '45', width: '90') %>
+  <% end %>
 </div>
 <p class="navbar-text float-right">
-  <% if user_signed_in? %>    
-    Logged in as <strong><%= current_user.email %></strong>.
-    <%= link_to 'Logout', destroy_user_session_path, :method => :delete,  class: 'btn btn-primary pull-right text-white' %>
+  <% if user_signed_in? %>
+    <div class="dropdown float-right">
+      <button class="glyphicon glyphicon-user btn bg-grey " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <%= current_user.email %>
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <%= link_to 'My Profile',  edit_user_registration_path, class: ' btn bg-white pull-right dropdown-item' %>
+        <%= link_to ' Logout', destroy_user_session_path, :method => :delete,  class: 'glyphicon glyphicon-off  btn bg-white dropdown-item' %>
+      </div>
+    </div>    
   <% else %>
     <%= link_to '<button class="btn btn-info" type="button">Login</button>'.html_safe, new_user_session_path, :class => 'navbar-link'  %>
   <% end %>
