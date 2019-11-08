@@ -1,4 +1,4 @@
-<h6><strong>Commentor</strong> : <%= comment.user.email %>  </h6>
+<h6><strong>Commentor</strong> : <%= comment.user.email %> </h6>
 <h6><strong>Comment</strong> : <%= comment.description %></h6><br>
 <p id='comment_btn' class="text-primary" >
    <%= link_to 'Like',user_post_comment_like_path(current_user, @post, comment), :class => "text-primary", method: :put, remote: :true %> 
@@ -6,7 +6,7 @@
   <%= link_to 'Dislike', user_post_comment_dislike_path(current_user, @post, comment), method: :put, :class => "text-primary", remote: true%>
   <%= comment.get_downvotes.size %>
   <% if comment_user?(comment.user_id) %> |
-    <%= link_to 'Edit', edit_user_post_comment_path(current_user,@post,comment) %> |
+    <%= link_to 'Edit', edit_user_post_comment_path(current_user,@post,comment), :class => 'text-primary' %> |
     <%= link_to 'Delete', user_post_comment_path(current_user, @post, comment), method: :delete, remote: true %>
   <% end %>  
 </p> <hr>

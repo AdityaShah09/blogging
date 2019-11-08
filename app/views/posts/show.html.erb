@@ -1,26 +1,31 @@
-<center><div class="card" style="width: 18rem;">
+<center><div class="card" style="width: 70rem;">
   <div class="card-body">
-    <h5 class="card-title">
+    <h3 class="card-title float-left">
       <strong>
         <%= @post.title %>
       </strong>
-    </h5>
-    <p class="card-text">
+    </h3><br><br>
+    <p class="float-left"><%= time_ago_in_words(@post.created_at) %> ago</p>
+    <br>
+    <p class="card-text float-left">
       <strong>
         <%= @post.description %>
       </strong>
-    </p>	
+    </p>	<br>
     <div class="text-sm-left">
       <p id='comment_btn' class="text-primary" >
         <%= link_to 'Like', user_post_like_path(current_user, @post), method: :put, :class => "text-primary", remote: true %> 
         <%= @post.get_upvotes.size %> |
         <%= link_to 'Dislike', user_post_dislike_path(current_user, @post), method: :put,:class => "text-primary", remote: true %>
         <%=@post.get_downvotes.size %> <hr>
-      </p> 
-      <%= render  @post.comments %>
-      <center>
+      </p>
+      <button type="button" id='comment_link' class="btn">Show Comments</button><br>
+      <div class="comment_show"> 
+      <br><%= render  @post.comments %>
+      <center class="float-left">
         <%= render 'comments/form', locals: @comment = @post.comments.build %>
       </center>
+      </div>
     </div>
   </div>
 </div>

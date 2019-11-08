@@ -16,8 +16,17 @@
 //= rsequire rails-ujs
 //= require jquery3
 
-<script>
-  $('#datepicker').datepicker({
-      uiLibrary: 'bootstrap4'
+
+$(document).ready(function() { 
+  $("#comment_link").click(function() { 
+      $('.comment_show').css('visibility', 'visible');
   });
-</script>
+
+  $('#datepicker').datepicker({
+    uiLibrary: 'bootstrap4'
+  });
+
+});
+
+
+
