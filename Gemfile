@@ -13,12 +13,16 @@ gem 'rails', '~> 5.1.7'
 gem 'pg'
 # Use of devise gem
 gem 'devise'
+# Use of Rolify gem
+gem "rolify"
 # Use of jquery gem
 gem 'jquery-rails', '~> 4.3'
 # Use act_as_votable gem
 gem 'acts_as_votable', '~> 0.10.0'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
+# Use of CanCan Gem
+gem "cancan"
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets

@@ -14,8 +14,6 @@
         <%= link_to 'My Profile',  edit_user_registration_path, class: ' btn bg-white pull-right dropdown-item' %>
         <%= link_to ' Logout', destroy_user_session_path, :method => :delete,  class: 'glyphicon glyphicon-off  btn bg-white dropdown-item' %>
       </div>
-    </div>    
-  <% else %>
-    <%= link_to '<button class="btn btn-info" type="button">Login</button>'.html_safe, new_user_session_path, :class => 'navbar-link'  %>
+    </div>
   <% end %>
 </p>

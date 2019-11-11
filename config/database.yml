@@ -1,7 +1,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: blog_app_development
+  database: blog_app2_development
   pool: 5
   username: postgres
   password: postgres
@@ -10,7 +10,7 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: blog_app_test
+  database: blog_app2_test
   pool: 5
   username: postgres
   password: postgres
