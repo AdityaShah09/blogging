@@ -1,4 +1,4 @@
-<center><div class="card" style="width: 70rem;">
+<center><div class="card bg-light" style="width: 70rem;">
   <div class="card-body">
     <h3 class="card-title float-left">
       <strong>
@@ -19,8 +19,9 @@
         <%= link_to 'Dislike', user_post_dislike_path(current_user, @post), method: :put,:class => "text-primary", remote: true %>
         <%=@post.get_downvotes.size %> <hr>
       </p>
-      <button type="button" id='comment_link' class="btn">Show Comments</button><br>
-      <div class="comment_show"> 
+      <button id='comment_link' class="btn">Show Comments</button>
+      <br>
+      <div class="comment_show hidden"> 
       <br><%= render  @post.comments %>
       <center class="float-left">
         <%= render 'comments/form', locals: @comment = @post.comments.build %>

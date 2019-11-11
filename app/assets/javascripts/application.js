@@ -17,16 +17,17 @@
 //= require jquery3
 
 
-$(document).ready(function() { 
-  $("#comment_link").click(function() { 
-      $('.comment_show').css('visibility', 'visible');
+$(document).ready(function() {
+  $( "#comment_link" ).click(function() {
+    $( ".comment_show" ).toggle('slow');
   });
-
+  
   $('#datepicker').datepicker({
     uiLibrary: 'bootstrap4'
   });
-
 });
+
+
 
 
 
