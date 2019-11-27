@@ -24,13 +24,14 @@
         <td><%= user.id %></td>
         <td><%= user.email %></td>
         <td><%= link_to 'show',  user_posts_path(user),  class: 'btn btn-success text-white' %></td>
-        <% if current_user.has_role?(:admin) || current_user.id == user.id%>
+        <% if can? :update, user%>
           <td><%= link_to 'Edit', edit_user_registration_path,  class: 'btn btn-primary text-white' %></td>
+        <% end %>
+        <% if can? :destroy, user%>
           <td><%= link_to 'Destroy', user_path(user), class: 'btn btn-danger text-white', method: :delete %></td>
         <% else %>
         <td></td><td></td>
         <% end %>
-
       </tr>
   <% end %>
 </table>

@@ -1,6 +1,6 @@
 <%= form_for([current_user, @post, @comment]) do |form| %>
   <div class="field">
-    <%= form.text_field :description, id: :comment_description %>
+    <%= form.text_area :description, id: :comment_description %>
   </div> 
   
   <div class="actions float-left">

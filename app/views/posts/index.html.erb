@@ -25,9 +25,13 @@
             <td><%= post.title %></td>
             <td style="width: 40%"><%= post.description %></td>
             <td><%= link_to 'show',  user_post_path(@user,post), class: 'btn btn-success text-white' %></td>
-            <td><%= link_to 'Edit', edit_user_post_path(@user,post) ,class: 'btn btn-primary text-white' %></td>
-            <td><%= link_to 'Destroy', user_post_path(@user,post),class: 'btn btn-danger text-white', 
+            <% if can? :update, post%>
+              <td><%= link_to 'Edit', edit_user_post_path(@user,post) ,class: 'btn btn-primary text-white' %></td>
+            <% end %>
+            <% if can? :destroy, post%>
+              <td><%= link_to 'Destroy', user_post_path(@user,post),class: 'btn btn-danger text-white', 
             method: :delete %></td>
+            <% end %>
           </tr>
         <% end %>
       </tbody>
@@ -35,7 +39,7 @@
     <br>
     <% if current_user?(@user) %>
     <center> 
-      <%= link_to 'Add post' , new_user_post_path(current_user), class: 'btn btn-primary'%>
+      <%= link_to 'Add post' , new_user_post_path(current_user), class: 'btn btn-primary text-white'%>
     </center>
     <% end %>
   </body>

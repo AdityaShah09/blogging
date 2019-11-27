@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   root to: 'homes#index'
   # Below for all other routes:
   devise_for :users
-
   resources :users do
     resources :posts do
       put 'like', to: 'posts#upvote'

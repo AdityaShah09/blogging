@@ -19,15 +19,11 @@
         <%= link_to 'Dislike', user_post_dislike_path(current_user, @post), method: :put,:class => "text-primary", remote: true %>
         <%=@post.get_downvotes.size %> <hr>
       </p>
-      <!-- <button id='comment_link' class="btn">Show Comments</button>
-      <br>
-      <div class="comment_show hidden"> --> 
+      <br> 
       <br><%= render  @post.comments %>
       <center class="float-left">
         <%= render 'comments/form', locals: @comment = @post.comments.build %>
       </center>
-      <!--</div> -->
     </div>
   </div>
-</div>
-</center>
+</div></center>
