@@ -8,6 +8,6 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name, :dob, :gender, :mobile])
-    devise_parameter_sanitizer.permit(:accept_invitation, keys: [:email])
+    # devise_parameter_sanitizer.permit(:accept_invitation, keys: [:email])
   end
 end

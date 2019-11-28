@@ -7,11 +7,12 @@
 <p class="navbar-text float-right">
   <% if user_signed_in? %>
     <div class="dropdown float-right">
-      <button class="glyphicon glyphicon-user btn bg-grey " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <button class="glyphicon glyphicon-envelope btn bg-grey " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <%= current_user.email %>
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
         <%= link_to 'My Profile',  edit_user_registration_path, class: ' btn bg-white pull-right dropdown-item' %>
+        <%= link_to 'Invite user',  new_user_invitation_path, class: ' btn bg-white pull-right dropdown-item text-dark' %>
         <%= link_to ' Logout', destroy_user_session_path, :method => :delete,  class: 'glyphicon glyphicon-off  btn bg-white dropdown-item' %>
       </div>
     </div>

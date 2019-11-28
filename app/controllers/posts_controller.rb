@@ -13,7 +13,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
-    @post
+    Visitor.saveVisitor(current_user, @post)
   end
 
   # GET /posts/new

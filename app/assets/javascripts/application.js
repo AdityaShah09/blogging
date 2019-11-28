@@ -17,15 +17,17 @@
 //= require jquery3
 
 
-$(document).ready(function() {
-  $( "#comment_link" ).click(function() {
-    $( ".comment_show" ).toggle('slow');
+$(document).on("turbolinks:load",function() {
+   $('.comment_show').click(function(event){
+    event.preventDefault();
+    $('.comments').toggle('slow');
   });
-  
+
   $('#datepicker').datepicker({
     uiLibrary: 'bootstrap4'
   });
 });
+
 
 
 

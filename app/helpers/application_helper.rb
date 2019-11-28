@@ -2,7 +2,6 @@
 
 # ApplicatonHelper
 module ApplicationHelper
-
   def current_role(user)
     user.roles.map(&:name)
   end

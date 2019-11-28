@@ -13,7 +13,7 @@ gem 'rails', '~> 5.1.7'
 gem 'pg'
 # Use of devise gem
 gem 'devise'
-# Use of Rolify gem
+# Use of Ahoy gem for Profile Visits
 gem 'rolify'
 # Use of jquery gem
 gem 'jquery-rails', '~> 4.3'
