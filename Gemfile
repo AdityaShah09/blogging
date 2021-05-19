@@ -20,7 +20,7 @@ gem 'jquery-rails', '~> 4.3'
 # Use act_as_votable gem
 gem 'acts_as_votable', '~> 0.10.0'
 # Use Puma as the app server
-gem 'puma', '~> 3.7'
+gem 'puma', '~> 4.3'
 # Use of CanCan Gem
 gem 'cancan'
 # User of Devise_Invitable
